@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login/page/beranda.dart';
+import 'package:login/page/main_page.dart';
 import 'package:login/service/firebase_auth.dart';
 
 class Login extends StatefulWidget {
@@ -104,7 +105,7 @@ class _LoginState extends State<Login> {
                           .then((value) => Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const Beranda()),
+                                  builder: (context) => const MainPage()),
                               (route) => false))
                           .catchError((_) {
                         showDialog(
