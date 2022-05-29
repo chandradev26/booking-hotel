@@ -47,30 +47,30 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDD3UgpTUum_JYJ5FrPcxouLpSas6YIkZY',
-    appId: '1:709335841416:web:ff9b7b06d5b7189ba37d3d',
-    messagingSenderId: '709335841416',
-    projectId: 'booking-9edb3',
-    authDomain: 'booking-9edb3.firebaseapp.com',
-    storageBucket: 'booking-9edb3.appspot.com',
-    measurementId: 'G-47PNL8ZL3Y',
+    apiKey: 'AIzaSyDpEsl7U7JxtpGBdO_-bjrrFtGQFZs22D8',
+    appId: '1:441833996112:web:4d062ded3cc87996ddb655',
+    messagingSenderId: '441833996112',
+    projectId: 'booking-hotel-de0ca',
+    authDomain: 'booking-hotel-de0ca.firebaseapp.com',
+    storageBucket: 'booking-hotel-de0ca.appspot.com',
+    measurementId: 'G-R02RGTDZBW',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDd3Oy24vWCtrHkN9BhHJw3UwdPluTJcvE',
-    appId: '1:709335841416:android:c5d499f7c0b77ed3a37d3d',
-    messagingSenderId: '709335841416',
-    projectId: 'booking-9edb3',
-    storageBucket: 'booking-9edb3.appspot.com',
+    apiKey: 'AIzaSyB0h_Qs89UmxOIuLca9IJScrZORGcC_63M',
+    appId: '1:441833996112:android:bb7dc7fe25d37b71ddb655',
+    messagingSenderId: '441833996112',
+    projectId: 'booking-hotel-de0ca',
+    storageBucket: 'booking-hotel-de0ca.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyB8GtaEuN7nUakDDuojibX2iMwtCjHI_98',
-    appId: '1:709335841416:ios:3bb9b1a3462bd4aca37d3d',
-    messagingSenderId: '709335841416',
-    projectId: 'booking-9edb3',
-    storageBucket: 'booking-9edb3.appspot.com',
-    iosClientId: '709335841416-tompqh11s7qmk1v6gq5i7lms7nio1cle.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBVcUxi1uh0xRUy6QISWCB3Dg-GZUdruLU',
+    appId: '1:441833996112:ios:05f6a97911dece21ddb655',
+    messagingSenderId: '441833996112',
+    projectId: 'booking-hotel-de0ca',
+    storageBucket: 'booking-hotel-de0ca.appspot.com',
+    iosClientId: '441833996112-7rgs3o43ka804j9c3jvlta9gdq406rj3.apps.googleusercontent.com',
     iosBundleId: 'com.example.login',
   );
 }

@@ -1,7 +1,7 @@
 {
   "file_generated_by": "FlutterFire CLI",
   "purpose": "FirebaseAppID & ProjectID for this Firebase app in this directory",
-  "GOOGLE_APP_ID": "1:709335841416:ios:3bb9b1a3462bd4aca37d3d",
-  "FIREBASE_PROJECT_ID": "booking-9edb3",
-  "GCM_SENDER_ID": "709335841416"
+  "GOOGLE_APP_ID": "1:441833996112:ios:05f6a97911dece21ddb655",
+  "FIREBASE_PROJECT_ID": "booking-hotel-de0ca",
+  "GCM_SENDER_ID": "441833996112"
 }

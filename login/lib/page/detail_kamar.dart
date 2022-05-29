@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login/page/booking.dart';
 
 class DetailKamar extends StatelessWidget {
   final String namaKategori, image, deskripsi;
@@ -64,7 +65,9 @@ class DetailKamar extends StatelessWidget {
                 )
               ],
             ),
-            const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             SizedBox(
               width: MediaQuery.of(context).size.width,
               child: Text(
@@ -84,7 +87,13 @@ class DetailKamar extends StatelessWidget {
         child: FittedBox(
           child: FloatingActionButton(
               backgroundColor: Colors.blue[800],
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            Booking(namaKategori: namaKategori)));
+              },
               child: const Icon(
                 Icons.fact_check,
                 size: 25,

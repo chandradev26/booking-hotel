@@ -1,21 +1,23 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:login/page/login.dart';
 import 'package:login/page/main_page.dart';
-import 'package:login/page/register.dart';
-import 'package:login/service/firebase_auth.dart';
+import 'package:login/service/user_services.dart';
 import 'package:login/widget/custom_error_modal.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+class Register extends StatefulWidget {
+  const Register({Key? key}) : super(key: key);
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Register> createState() => _RegisterState();
 }
 
-class _LoginState extends State<Login> {
+class _RegisterState extends State<Register> {
   bool isShow = false;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController namaController = TextEditingController();
+  TextEditingController noHPController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +73,52 @@ class _LoginState extends State<Login> {
                         color: Colors.grey[200]),
                     child: TextFormField(
                       keyboardType: TextInputType.text,
+                      controller: namaController,
+                      style: TextStyle(
+                          color: Colors.grey[800],
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400),
+                      decoration: InputDecoration(
+                          hintText: "Nama",
+                          hintStyle: TextStyle(
+                              color: Colors.grey[800],
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400),
+                          border: InputBorder.none),
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    decoration: BoxDecoration(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(100)),
+                        color: Colors.grey[200]),
+                    child: TextFormField(
+                      keyboardType: TextInputType.phone,
+                      controller: noHPController,
+                      style: TextStyle(
+                          color: Colors.grey[800],
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400),
+                      decoration: InputDecoration(
+                          hintText: "Nomor HP",
+                          hintStyle: TextStyle(
+                              color: Colors.grey[800],
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400),
+                          border: InputBorder.none),
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    decoration: BoxDecoration(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(100)),
+                        color: Colors.grey[200]),
+                    child: TextFormField(
+                      keyboardType: TextInputType.text,
                       controller: passwordController,
                       obscureText: !isShow,
                       style: TextStyle(
@@ -102,8 +150,11 @@ class _LoginState extends State<Login> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      AuthFirebase.signIn(
-                              emailController.text, passwordController.text)
+                      UserServices.addUser(
+                              emailController.text,
+                              passwordController.text,
+                              namaController.text,
+                              noHPController.text)
                           .then((value) => Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
@@ -113,7 +164,7 @@ class _LoginState extends State<Login> {
                         showDialog(
                             context: context,
                             builder: (context) => customErrorModal(
-                                context, 'Username atau password salah'));
+                                context, 'Terjadi kesalahan ketika mendaftar'));
                       });
                     },
                     child: Container(
@@ -125,7 +176,7 @@ class _LoginState extends State<Login> {
                               const BorderRadius.all(Radius.circular(100)),
                           color: Colors.blue[800]),
                       child: const Text(
-                        "Login",
+                        "Daftar",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.white,
@@ -137,14 +188,14 @@ class _LoginState extends State<Login> {
                   Center(
                       child: RichText(
                     text: TextSpan(
-                        text: 'Belum punya akun ? ',
+                        text: 'Sudah punya akun ? ',
                         style: TextStyle(
                             color: Colors.grey[800],
                             fontSize: 16,
                             fontWeight: FontWeight.w400),
                         children: [
                           TextSpan(
-                              text: 'Daftar',
+                              text: 'Login',
                               style: TextStyle(
                                   color: Colors.blue[800],
                                   fontSize: 16,
@@ -153,7 +204,7 @@ class _LoginState extends State<Login> {
                                 ..onTap = () => Navigator.pushAndRemoveUntil(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => const Register()),
+                                        builder: (context) => const Login()),
                                     (route) => false))
                         ]),
                   ))
